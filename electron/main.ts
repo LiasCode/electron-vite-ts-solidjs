@@ -14,7 +14,7 @@ function createWindow() {
       defaultEncoding: "UTF-8",
     },
     center: true,
-    darkTheme: true
+    darkTheme: true,
   });
 
   const urlDev = "http://localhost:3030/";
