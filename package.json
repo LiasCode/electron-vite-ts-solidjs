@@ -11,19 +11,18 @@
     "build:ui": "tsc && vite build",
     "preview:ui": "vite preview",
     "build:electron": "tsc -p ./electron/tsconfig.json",
-    "dev:electron": "npm run build:electron && wait-on -i -l tcp:3030 && electron ./build-electron/main.js",
-    "dev": "npm-run-all --parallel dev:ui dev:electron",
-    "pack": "npm-run-all --parallel build:* && electron-builder --dir",
-    "dist": "npm-run-all --parallel build:* && electron-builder -wl",
+    "dev:electron": "cross-env npm run build:electron && wait-on -i -l tcp:3030 && electron ./build-electron/main.js",
+    "dev": "npm-run-all --parallel dev:*",
+    "package": "npm-run-all --parallel build:* && electron-builder -w -l --dir",
+    "release": "npm-run-all --parallel build:* && electron-builder ",
     "postinstall": "electron-builder install-app-deps",
     "clean": "cross-env rm -r -f ./build-electron ./build-ui",
-    "format": "prettier --write 'src/**/*.{js,ts,tsx,jsx,json,css,scss}' 'electron/**/*.{js,ts,tsx,jsx,json,css,scss}' --config .prettierrc.json",
+    "format": "cross-env prettier --write 'src/**/*.{js,ts,tsx,jsx,json,css,scss}' 'electron/**/*.{js,ts,tsx,jsx,json,css,scss}' --config .prettierrc.json",
     "prepare": "husky install"
   },
   "dependencies": {
     "electron-is-dev": "^2.0.0",
-    "solid-js": "^1.7.7",
-    "wait-on": "^7.0.1"
+    "solid-js": "^1.7.7"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
@@ -34,6 +33,7 @@
     "prettier": "^3.0.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.0",
-    "vite-plugin-solid": "^2.7.0"
+    "vite-plugin-solid": "^2.7.0",
+    "wait-on": "^7.0.1"
   }
 }

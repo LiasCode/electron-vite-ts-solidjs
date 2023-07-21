@@ -1,1 +1,29 @@
-appId: "com.example.app"
+appId: "com.electron.vite.ts.solidjs.app"
+productName: "electron-vite-ts-solidjs"
+
+# asar: true
+
+# asarUnpack: "**\\*.{node,dll}"
+
+# files:
+#   - build-ui
+#   - build-electron
+#   - node_modules
+#   - package.json
+
+win:
+  target:
+    - nsis
+
+linux:
+  target:
+    - AppImage
+  category: Development
+#
+# directories:
+  # app: release/app
+  # buildResources: assets
+  # output: release/build
+
+# extraResources:
+#   - "./assets/**"
