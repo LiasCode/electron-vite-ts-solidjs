@@ -14,7 +14,7 @@
     "dev:electron": "cross-env npm run build:electron && wait-on -i -l tcp:3030 && electron ./build-electron/main.js",
     "dev": "npm-run-all --parallel dev:*",
     "package": "npm-run-all --parallel build:* && electron-builder -w -l --dir",
-    "release": "npm-run-all --parallel build:* && electron-builder ",
+    "release": "npm-run-all --parallel build:* && electron-builder build",
     "postinstall": "electron-builder install-app-deps",
     "clean": "cross-env rm -r -f ./build-electron ./build-ui",
     "format": "cross-env prettier --write 'src/**/*.{js,ts,tsx,jsx,json,css,scss}' 'electron/**/*.{js,ts,tsx,jsx,json,css,scss}' --config .prettierrc.json",

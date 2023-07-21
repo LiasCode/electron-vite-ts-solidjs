@@ -6,7 +6,15 @@ function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    webPreferences: {},
+    webPreferences: {
+      sandbox: true,
+      nodeIntegration: false,
+      devTools: isDev,
+      minimumFontSize: 20,
+      defaultEncoding: "UTF-8",
+    },
+    center: true,
+    darkTheme: true
   });
 
   const urlDev = "http://localhost:3030/";
