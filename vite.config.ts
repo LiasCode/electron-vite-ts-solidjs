@@ -20,7 +20,7 @@ export default defineConfig({
   mode: "production",
   resolve: {
     alias: {
-      "@/": path.resolve(__dirname, "./src/"),
+      "@": `${path.resolve(__dirname, "./src/")}`
     },
   }
 })
