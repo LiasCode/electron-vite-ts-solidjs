@@ -7,7 +7,7 @@ export default defineConfig({
     outDir: "build-ui",
     emptyOutDir: true,
   },
-  base : "./",
+  base: "./",
   server: {
     open: false,
     port: 3030,
