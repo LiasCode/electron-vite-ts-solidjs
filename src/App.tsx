@@ -67,7 +67,6 @@ function App() {
       <p class="read-the-docs">
         Click on the Electron, TypeScript, Vite and Solid logos to learn more
       </p>
-
     </>
   );
 }
