@@ -22,17 +22,17 @@
   },
   "dependencies": {
     "electron-is-dev": "^2.0.0",
-    "solid-js": "^1.7.7"
+    "solid-js": "^1.7.8"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "electron": "^25.3.0",
-    "electron-builder": "^24.4.0",
+    "electron": "^25.3.2",
+    "electron-builder": "^24.6.3",
     "husky": "^8.0.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.0.0",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.7",
     "vite-plugin-solid": "^2.7.0",
     "wait-on": "^7.0.1"
   }
