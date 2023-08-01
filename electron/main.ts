@@ -13,7 +13,7 @@ function createWindow() {
       devTools: isDev,
       minimumFontSize: 20,
       defaultEncoding: "UTF-8",
-      preload: path.join(__dirname, 'preload.js'),
+      preload: path.join(__dirname, "preload.js"),
     },
     center: true,
     darkTheme: true,
