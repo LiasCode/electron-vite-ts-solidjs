@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, ipcMain } from "electron";
 import path from "node:path";
 import isDev from "electron-is-dev";
 
@@ -9,9 +9,11 @@ function createWindow() {
     webPreferences: {
       sandbox: true,
       nodeIntegration: false,
+      nodeIntegrationInWorker: false,
       devTools: isDev,
       minimumFontSize: 20,
       defaultEncoding: "UTF-8",
+      preload: path.join(__dirname, 'preload.js'),
     },
     center: true,
     darkTheme: true,
@@ -43,4 +45,8 @@ app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
     app.quit();
   }
+});
+
+ipcMain.handle("greet", () => {
+  console.log("greeting from the renderer process");
 });

@@ -7,6 +7,7 @@ import "@/App.css";
 
 function App() {
   const [count, setCount] = createSignal(0);
+  window.electronAPI.greets();
 
   return (
     <>
